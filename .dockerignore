@@ -1,0 +1,10 @@
+.git
+.local
+data
+bin
+frontend/node_modules
+frontend/dist
+.env
+secrets
+**/*.exe
+**/*.log

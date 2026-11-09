@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist.ready/
+.local/
+data/
+*.exe
+*.test
+*.log
+.env
+secrets/
+coverage/
+bin/
+*.tsbuildinfo
+.codex/
+.agents/
+!backend/internal/adapters/storage/testdata/
