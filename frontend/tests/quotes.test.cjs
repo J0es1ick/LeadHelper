@@ -1,0 +1,5 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const ts=require('typescript');const fs=require('node:fs');const vm=require('node:vm');const m={exports:{}};
+vm.runInNewContext(ts.transpileModule(fs.readFileSync('src/features/mail/quotes.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,{exports:m.exports});
+const split=m.exports.splitQuotedText;
+test('quoted replies are hidden without losing any text',()=>{for(const source of ['New answer\n\nOn Tuesday, Anna wrote:\n> Old text','Ответ\n\nАнна написалa:\n> Старый текст','Ответ\nОт: sender@example.test\nКому: me@example.test\nСтарый текст']){const v=split(source);assert.ok(v.quote);assert.ok(v.body);assert.equal(v.body.trim()+v.quote.trim(),source.slice(0,source.indexOf(v.quote)).trim()+v.quote.trim())}});
+test('ordinary From text and unquoted messages stay visible',()=>{for(const text of ['От: идеи к реализации\nНовый текст','Обычное сообщение\nВторая строка']){assert.equal(split(text).body,text);assert.equal(split(text).quote,'')}});

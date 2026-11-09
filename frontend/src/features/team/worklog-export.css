@@ -1,0 +1,179 @@
+.worklog-export {
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+}
+.worklog-export > p {
+  margin: 0;
+}
+.worklog-export fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  gap: 18px;
+}
+.worklog-export fieldset > label,
+.export-dates label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.worklog-export input:not([type="checkbox"]),
+.worklog-export select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+  color-scheme: inherit;
+}
+.export-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.export-weekdays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.export-weekdays button,
+.export-date-tags button {
+  padding: 9px 14px;
+  background: var(--white);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  cursor: pointer;
+}
+.export-weekdays button[aria-pressed="true"] {
+  background: var(--mint);
+  color: var(--green);
+  border-color: var(--green);
+  font-weight: 600;
+}
+.export-custom-dates {
+  display: grid;
+  gap: 10px;
+}
+.export-custom-dates > div:first-child {
+  display: flex;
+  gap: 10px;
+}
+.export-date-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.export-date-tags button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.export-members {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 14px;
+}
+.export-members summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.export-member-tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0;
+}
+.export-member-tools .text-button {
+  flex-shrink: 0;
+}
+.export-member-list {
+  display: grid;
+  gap: 4px;
+  max-height: 210px;
+  overflow: auto;
+}
+.export-member-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  cursor: pointer;
+}
+.export-member-list input {
+  accent-color: var(--green);
+  width: 16px;
+  height: 16px;
+}
+.export-member-list small {
+  display: block;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.export-period-preview,
+.export-ready {
+  background: var(--mint);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 16px;
+}
+.export-period-preview p,
+.export-ready p {
+  margin: 7px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.export-period-preview ol {
+  margin: 10px 0 0;
+  padding-left: 22px;
+  max-height: 150px;
+  overflow: auto;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.export-progress {
+  display: grid;
+  gap: 8px;
+}
+.export-progress progress {
+  width: 100%;
+  accent-color: var(--green);
+  height: 8px;
+}
+.export-progress small {
+  color: var(--muted);
+}
+.export-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+@media (max-width: 600px) {
+  .worklog-export {
+    padding: 18px;
+  }
+  .export-dates {
+    grid-template-columns: 1fr;
+  }
+  .export-member-tools {
+    flex-wrap: wrap;
+  }
+  .export-actions {
+    flex-wrap: wrap;
+  }
+  .export-weekdays {
+    gap: 5px;
+  }
+  .export-weekdays button {
+    padding: 8px 11px;
+  }
+}

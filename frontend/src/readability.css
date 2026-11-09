@@ -1,0 +1,212 @@
+/* Shared legibility adjustments for dense workspace screens. */
+.nav-item {
+  font-size: 13px;
+  color: var(--color-69796e, #69796e);
+}
+.workspace-picker strong {
+  font-size: 12px;
+}
+.page-heading p,
+.focus-card p,
+.welcome-card p {
+  color: var(--color-71826d, #71826d);
+}
+.page-context {
+  color: var(--color-7e8d7b, #7e8d7b);
+  font-size: 10px;
+}
+.button {
+  font-size: 12px;
+}
+.stat-top,
+.stat-card > span {
+  color: var(--color-6f8068, #6f8068);
+  font-size: 11px;
+}
+.stat-bottom,
+.stat-card > small {
+  color: var(--color-829276, #829276);
+  font-size: 10px;
+}
+.task-mini-title {
+  font-size: 12px;
+}
+.task-mini-title span,
+.date-label {
+  color: var(--color-819174, #819174);
+  font-size: 10px;
+}
+.section-heading p,
+.view-caption {
+  color: var(--color-829273, #829273);
+  font-size: 11px;
+}
+.personal-row > button:last-child {
+  font-size: 12px;
+}
+.add-inline {
+  font-size: 11px;
+  color: var(--color-688450, #688450);
+}
+.member-info strong {
+  font-size: 12px;
+}
+.member-info span {
+  font-size: 10px;
+  color: var(--color-879779, #879779);
+}
+.member-info {
+  width: 150px;
+}
+.mail-preview strong {
+  font-size: 12px;
+}
+.mail-preview span span {
+  font-size: 11px;
+  color: var(--color-819171, #819171);
+}
+.note-preview p,
+.note-item p {
+  font-size: 12px;
+  color: var(--color-899174, #899174);
+}
+.card-title {
+  font-size: 13px;
+}
+.task-project,
+.task-card-bottom {
+  font-size: 10px;
+  color: var(--color-829373, #829373);
+}
+.source {
+  color: var(--color-728562, #728562);
+  font-size: 10px;
+}
+.priority {
+  font-size: 10px;
+}
+.priority-high {
+  color: var(--color-956c3f, #956c3f);
+}
+.priority-critical {
+  color: var(--color-a35f52, #a35f52);
+}
+.priority-medium {
+  color: var(--color-677c9e, #677c9e);
+}
+.priority-low {
+  color: var(--color-6c855b, #6c855b);
+}
+.folder {
+  font-size: 11px;
+  color: var(--color-74875f, #74875f);
+}
+.mail-item strong {
+  font-size: 12px;
+}
+.mail-item h4 {
+  font-size: 12px;
+}
+.mail-item p {
+  color: var(--color-859674, #859674);
+  font-size: 11px;
+}
+.mail-item time,
+.mail-date {
+  color: var(--color-8e9d7e, #8e9d7e);
+  font-size: 10px;
+}
+.message-body {
+  color: var(--color-647951, #647951);
+  font-size: 14px;
+}
+.sender strong {
+  font-size: 13px;
+}
+.sender span,
+.sender small {
+  font-size: 11px;
+  color: var(--color-8a9b78, #8a9b78);
+}
+.demo-notice {
+  color: var(--color-778b5e, #778b5e);
+  font-size: 11px;
+}
+.info-strip {
+  color: var(--color-768866, #768866);
+}
+.note-body-input {
+  color: var(--color-6b8059, #6b8059);
+  font-size: 14px;
+}
+.note-item h3 {
+  font-size: 13px;
+}
+.notes-welcome p,
+.module-row p,
+.settings-section > p,
+.integration-card > p,
+.integration-banner p {
+  color: var(--color-80946b, #80946b);
+  font-size: 12px;
+}
+.module-row h3 {
+  font-size: 13px;
+}
+.empty h3 {
+  color: var(--color-7b9168, #7b9168);
+}
+.empty p {
+  color: var(--color-8e9f7e, #8e9f7e);
+}
+@media (max-width: 760px) {
+  .member-info {
+    width: 125px;
+  }
+  .member-info strong,
+  .mail-preview strong {
+    font-size: 11px;
+  }
+  .task-mini-title,
+  .personal-row > button:last-child {
+    font-size: 11px;
+  }
+  .page-context {
+    font-size: 9px;
+  }
+  .stat-top {
+    font-size: 10px;
+  }
+  .message-body {
+    font-size: 13px;
+  }
+  .module-row p {
+    font-size: 11px;
+  }
+}
+.mail-sync-panel {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  border: 1px solid var(--color-dce8e2, #dce8e2);
+  border-radius: 12px;
+  background: var(--color-f2f7f4, #f2f7f4);
+  color: var(--color-35594b, #35594b);
+}
+.mail-sync-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mail-sync-panel p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.mail-sync-panel small {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+.mail-sync-panel a {
+  color: inherit;
+  text-decoration: underline;
+}

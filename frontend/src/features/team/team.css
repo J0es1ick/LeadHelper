@@ -1,0 +1,558 @@
+.team-source {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+.team-day-cell {
+  padding: 5px !important;
+  min-width: 140px;
+  vertical-align: top;
+}
+.team-day-button {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  min-height: 110px;
+  height: 100%;
+  padding: 9px;
+  border: 1px dashed var(--line);
+  border-radius: 9px;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.team-day-button:hover,
+.team-day-button:focus-visible {
+  border-color: var(--green);
+  background: var(--mint);
+}
+.team-day-button.has-plan {
+  border-style: solid;
+  background: var(--mint);
+}
+.team-day-button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.team-day-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 11px;
+}
+.team-day-total {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+}
+.team-day-button .allocation {
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.team-day-button .allocation strong {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.team-day-button small {
+  font-size: 10px;
+}
+.team-worklog-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 280px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-width: 0;
+  width: 100%;
+}
+.team-worklog-task {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-top: 1px solid var(--line);
+  padding-top: 9px;
+  min-width: 0;
+}
+.team-worklog-key {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--green);
+  overflow-wrap: anywhere;
+}
+.team-worklog-title {
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.team-worklog-hours {
+  font-size: 12px;
+  color: var(--text);
+}
+.team-worklog-more {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+  padding-top: 6px;
+}
+.day-plan {
+  padding: 24px 28px;
+}
+.day-plan-person {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.day-plan-person span,
+.day-plan-hint {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.day-plan-selected {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--mint);
+}
+.day-plan-selected h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+.day-plan-selected h3 span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.day-plan-selected > p {
+  margin: 0;
+  font-size: 12px;
+}
+.day-plan-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.day-plan-selection > div {
+  flex: 1;
+  min-width: 0;
+}
+.day-plan-selection strong,
+.day-plan-option strong {
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.day-plan-selection small,
+.day-plan-option small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.day-plan-selection label {
+  font-size: 10px;
+  color: var(--muted);
+  flex: 0 0 80px;
+}
+.day-plan-selection input {
+  display: block;
+  width: 80px;
+  padding: 7px 9px;
+  margin-top: 4px;
+}
+.day-plan .search-field {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.day-plan-candidates {
+  max-height: 340px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 80px;
+}
+.day-plan-option {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.day-plan-option.chosen {
+  background: var(--mint);
+}
+.day-plan-option > input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--green);
+}
+.day-plan-option > span {
+  flex: 1;
+  min-width: 0;
+}
+.day-plan-option > svg {
+  color: var(--green);
+  flex-shrink: 0;
+}
+.day-plan .modal-footer {
+  padding: 18px 0 0;
+  margin-top: 16px;
+}
+.day-plan .inline-warning {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.day-plan-hint {
+  margin: 16px 0 0;
+}
+.day-plan-modal {
+  width: min(1120px, calc(100vw - 28px)) !important;
+  max-height: 94dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+}
+.day-plan-modal .modal-header {
+  flex-shrink: 0;
+}
+.day-plan-modal .day-plan {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 20px 24px;
+}
+.day-plan-person {
+  flex-shrink: 0;
+  margin-bottom: 14px;
+}
+.day-plan-person .button {
+  align-self: flex-start;
+}
+.day-plan-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  min-height: 0;
+  height: min(48dvh, 510px);
+}
+.day-plan-selected {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin: 0;
+}
+.day-plan-selected h3 {
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.day-plan-selection-scroll {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+}
+.day-plan-available {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.day-plan-candidates {
+  flex: 1;
+  max-height: none;
+  min-height: 60px;
+}
+.day-plan-available > .search-field,
+.day-plan-available > .task-pagination {
+  flex-shrink: 0;
+}
+.day-plan .modal-footer {
+  flex-shrink: 0;
+}
+.worklog-sync {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 15px 0;
+}
+.worklog-day {
+  padding: 24px 28px;
+}
+.worklog-entries {
+  max-height: 48dvh;
+  overflow-y: auto;
+  margin-top: 16px;
+}
+.worklog-entry {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.worklog-entry > div {
+  min-width: 0;
+}
+.worklog-entry strong,
+.worklog-entry small {
+  display: block;
+  margin-top: 6px;
+}
+.worklog-entry p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.worklog-entry b {
+  white-space: nowrap;
+  color: var(--green);
+}
+.worklog-entry small {
+  color: var(--muted);
+}
+@media (max-width: 700px) {
+  .day-plan-modal .day-plan {
+    padding: 14px;
+    overflow-y: auto;
+  }
+  .day-plan-columns {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 320px;
+    flex-shrink: 0;
+    gap: 12px;
+  }
+  .day-plan-selected {
+    order: 2;
+    max-height: 180px;
+    flex-shrink: 0;
+  }
+  .day-plan-available {
+    order: 1;
+    height: 260px;
+    flex-shrink: 0;
+  }
+  .day-plan .modal-footer {
+    position: sticky;
+    bottom: -14px;
+    background: var(--white);
+    padding-bottom: 14px;
+    z-index: 1;
+  }
+  .day-plan-person span,
+  .day-plan-hint {
+    font-size: 11px;
+  }
+}
+@media (max-width: 600px) {
+  .day-plan {
+    padding: 18px 16px;
+  }
+  .day-plan-selection {
+    gap: 6px;
+  }
+  .day-plan-selection label {
+    flex-basis: 64px;
+  }
+  .day-plan-selection input {
+    width: 64px;
+  }
+  .day-plan-selected {
+    padding: 12px;
+  }
+}
+.team-source-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.team-source-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  background: var(--mint);
+  color: var(--green);
+  flex-shrink: 0;
+}
+.team-source-heading > div {
+  flex: 1;
+  min-width: 0;
+}
+.team-source-heading h2 {
+  font-size: 17px;
+  margin: 0 0 5px;
+}
+.team-source-heading p,
+.team-source-hint {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.team-source-roots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 19px 0 13px;
+}
+.team-source-roots > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  padding: 7px 11px;
+  background: var(--mint);
+  color: var(--green);
+  border-radius: 6px;
+}
+.team-source-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+.team-source-meta > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+label.team-auto-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  font-size: 12px;
+}
+.team-auto-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--green);
+}
+.team-source-hint {
+  margin-top: 14px;
+}
+.team-source .inline-warning {
+  margin-top: 14px;
+}
+.team-member-departments {
+  display: block;
+  max-width: 240px;
+  font-size: 10px !important;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.team-member-badge {
+  display: inline-block;
+  margin: 5px 0 0;
+  font-size: 9px;
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.team-archive {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 17px 22px;
+  margin-top: 20px;
+}
+.team-archive summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+.team-archive p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 12px 0;
+}
+.team-archive ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.team-archive li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+  font-size: 12px;
+}
+.team-archive li small {
+  color: var(--muted);
+}
+@keyframes team-sync-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.team-sync-spin {
+  animation: team-sync-spin 1.2s linear infinite;
+}
+@media (max-width: 800px) {
+  .team-source {
+    padding: 18px;
+  }
+  .team-source-heading {
+    display: grid;
+    grid-template-columns: 43px minmax(0, 1fr);
+  }
+  .team-source-heading > .button {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .team-source-meta {
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-sync-spin {
+    animation: none;
+  }
+}
