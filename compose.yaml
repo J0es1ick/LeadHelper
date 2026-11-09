@@ -1,0 +1,45 @@
+name: leadhelper
+services:
+  app:
+    build: .
+    container_name: leadhelper-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${LEADHELPER_PORT:-8090}:8080"
+    environment:
+      JIRA_URL: ${JIRA_URL:-}
+      JIRA_EMAIL: ${JIRA_EMAIL:-}
+      JIRA_API_TOKEN: ${JIRA_API_TOKEN:-}
+      JIRA_JQL: ${JIRA_JQL:-}
+      JIRA_MODE: ${JIRA_MODE:-server}
+      BITRIX_WEBHOOK_URL: ${BITRIX_WEBHOOK_URL:-}
+      CONFLUENCE_URL: ${CONFLUENCE_URL:-}
+      CONFLUENCE_TOKEN: ${CONFLUENCE_TOKEN:-}
+      MAIL_PROVIDER: ${MAIL_PROVIDER:-imap}
+      IMAP_HOST: ${IMAP_HOST:-}
+      IMAP_PORT: ${IMAP_PORT:-993}
+      IMAP_USER: ${IMAP_USER:-}
+      IMAP_PASSWORD: ${IMAP_PASSWORD:-}
+      IMAP_PASSWORD_FILE: ${IMAP_PASSWORD_FILE:-}
+      MAIL_SYNC_INTERVAL: ${MAIL_SYNC_INTERVAL:-60s}
+      MAIL_FOLDERS: ${MAIL_FOLDERS:-}
+      MS_GRAPH_ACCESS_TOKEN: ${MS_GRAPH_ACCESS_TOKEN:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_SECURITY: ${SMTP_SECURITY:-tls}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_PASSWORD_FILE: ${SMTP_PASSWORD_FILE:-}
+      ALLOW_LIVE_MAIL_SEND: ${ALLOW_LIVE_MAIL_SEND:-true}
+    volumes:
+      - leadhelper-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 15s
+volumes:
+  leadhelper-data:
